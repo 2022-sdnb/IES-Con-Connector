@@ -1,0 +1,48 @@
+package com.example.connector.bo.chiller;
+
+import com.example.connector.entity.chiller.ChillerRunStateData;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class ChillerRunStateDataBo {
+    private final long deviceId;
+
+    private final long time;
+    private final short ktState;
+    private final String ktMsg;
+    private final short zdState;
+    private final String zdMsg;
+    private final short localState;
+    private final short refStatus;
+    private final short evaState;
+    private final short conState;
+    private final int comStartsCnt;
+    private final long runTime;
+
+    public ChillerRunStateData getEntity() {
+        LocalDateTime dateTime =
+                LocalDateTime.ofInstant(Instant.ofEpochMilli(time), ZoneId.systemDefault());
+
+        return new ChillerRunStateData(
+                null,
+                deviceId,
+                dateTime,
+                ktState,
+                ktMsg,
+                zdState,
+                zdMsg,
+                localState,
+                refStatus,
+                evaState,
+                conState,
+                comStartsCnt,
+                runTime,
+                (short) 1,
+                "ok");
+    }
+}

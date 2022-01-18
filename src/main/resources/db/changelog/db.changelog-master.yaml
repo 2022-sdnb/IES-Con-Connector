@@ -1,0 +1,1461 @@
+databaseChangeLog:
+- changeSet:
+    id: 1635277897610-1
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: charger_device_infoPK
+            name: id
+            type: BIGINT
+        - column:
+            name: addr
+            type: VARCHAR(255)
+        - column:
+            name: auth_man
+            type: VARCHAR(255)
+        - column:
+            name: cd_fcode
+            type: SMALLINT
+        - column:
+            name: cd_file
+            type: VARCHAR(255)
+        - column:
+            name: cd_name
+            type: VARCHAR(255)
+        - column:
+            name: cd_pid
+            type: VARCHAR(255)
+        - column:
+            name: check_man
+            type: VARCHAR(255)
+        - column:
+            name: datapoint
+            type: INT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: in_ie
+            type: FLOAT
+        - column:
+            name: in_power
+            type: FLOAT
+        - column:
+            name: in_ue
+            type: FLOAT
+        - column:
+            name: lat
+            type: VARCHAR(255)
+        - column:
+            name: lon
+            type: VARCHAR(255)
+        - column:
+            name: modify_cnt
+            type: INT
+        - column:
+            name: modify_date
+            type: timestamp
+        - column:
+            name: offline_cnt
+            type: INT
+        - column:
+            name: online_time
+            type: timestamp
+        - column:
+            name: out_cnt
+            type: SMALLINT
+        - column:
+            name: out_ie
+            type: FLOAT
+        - column:
+            name: out_power
+            type: FLOAT
+        - column:
+            name: out_ue
+            type: FLOAT
+        - column:
+            name: phase_cnt
+            type: SMALLINT
+        - column:
+            name: reg_date
+            type: timestamp
+        - column:
+            name: region
+            type: VARCHAR(255)
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: url
+            type: VARCHAR(255)
+        - column:
+            name: watt_code
+            type: VARCHAR(255)
+        - column:
+            name: zd_fcode
+            type: SMALLINT
+        - column:
+            name: zd_name
+            type: VARCHAR(255)
+        - column:
+            name: zd_pic
+            type: VARCHAR(255)
+        - column:
+            name: zd_pid
+            type: VARCHAR(255)
+        tableName: charger_device_info
+- changeSet:
+    id: 1635277897610-2
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: charger_run_electricity_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: income1
+            type: FLOAT
+        - column:
+            name: income2
+            type: FLOAT
+        - column:
+            name: income3
+            type: FLOAT
+        - column:
+            name: income4
+            type: FLOAT
+        - column:
+            name: pwatt1
+            type: FLOAT
+        - column:
+            name: pwatt2
+            type: FLOAT
+        - column:
+            name: pwatt3
+            type: FLOAT
+        - column:
+            name: pwatt4
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: start_time
+            type: timestamp
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        tableName: charger_run_electricity_data
+- changeSet:
+    id: 1635277897610-3
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: charger_run_energy_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: pwatt_in
+            type: FLOAT
+        - column:
+            name: qwatt_in
+            type: FLOAT
+        - column:
+            name: time
+            type: timestamp
+        tableName: charger_run_energy_data
+- changeSet:
+    id: 1635277897610-4
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: charger_run_other_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: factor
+            type: FLOAT
+        - column:
+            name: ia
+            type: FLOAT
+        - column:
+            name: ia_thd
+            type: FLOAT
+        - column:
+            name: ib
+            type: FLOAT
+        - column:
+            name: ib_thd
+            type: FLOAT
+        - column:
+            name: ic
+            type: FLOAT
+        - column:
+            name: ic_thd
+            type: FLOAT
+        - column:
+            name: io
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        - column:
+            name: ua
+            type: FLOAT
+        - column:
+            name: ua_thd
+            type: FLOAT
+        - column:
+            name: uab
+            type: FLOAT
+        - column:
+            name: ub
+            type: FLOAT
+        - column:
+            name: ub_thd
+            type: FLOAT
+        - column:
+            name: ubc
+            type: FLOAT
+        - column:
+            name: uc
+            type: FLOAT
+        - column:
+            name: uc_thd
+            type: FLOAT
+        - column:
+            name: uca
+            type: FLOAT
+        - column:
+            name: uo
+            type: FLOAT
+        tableName: charger_run_other_data
+- changeSet:
+    id: 1635277897610-5
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: charger_run_power_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: pin_rt
+            type: FLOAT
+        - column:
+            name: qin_rt
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        tableName: charger_run_power_data
+- changeSet:
+    id: 1635277897610-6
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: charger_run_schedule_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: on_off_set
+            type: SMALLINT
+        - column:
+            name: pin_set
+            type: FLOAT
+        - column:
+            name: price_set
+            type: FLOAT
+        - column:
+            name: qin_set
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        tableName: charger_run_schedule_data
+- changeSet:
+    id: 1635277897610-7
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: charger_run_state_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: cd_flag1
+            type: SMALLINT
+        - column:
+            name: cd_flag2
+            type: SMALLINT
+        - column:
+            name: cd_flag3
+            type: SMALLINT
+        - column:
+            name: cd_flag4
+            type: SMALLINT
+        - column:
+            name: cd_msg
+            type: VARCHAR(255)
+        - column:
+            name: cd_state
+            type: SMALLINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        - column:
+            name: zd_msg
+            type: VARCHAR(255)
+        - column:
+            name: zd_state
+            type: SMALLINT
+        tableName: charger_run_state_data
+- changeSet:
+    id: 1635277897610-8
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: chiller_device_infoPK
+            name: id
+            type: BIGINT
+        - column:
+            name: addr
+            type: VARCHAR(255)
+        - column:
+            name: auth_man
+            type: VARCHAR(255)
+        - column:
+            name: cap_cool
+            type: FLOAT
+        - column:
+            name: cap_heat
+            type: FLOAT
+        - column:
+            name: check_man
+            type: VARCHAR(255)
+        - column:
+            name: datapoint
+            type: INT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: ibreak
+            type: FLOAT
+        - column:
+            name: imax
+            type: FLOAT
+        - column:
+            name: imin
+            type: FLOAT
+        - column:
+            name: istart
+            type: FLOAT
+        - column:
+            name: kt_fcode
+            type: SMALLINT
+        - column:
+            name: kt_file
+            type: VARCHAR(255)
+        - column:
+            name: kt_name
+            type: VARCHAR(255)
+        - column:
+            name: kt_pid
+            type: VARCHAR(255)
+        - column:
+            name: lat
+            type: VARCHAR(255)
+        - column:
+            name: lon
+            type: VARCHAR(255)
+        - column:
+            name: modify_cnt
+            type: INT
+        - column:
+            name: modify_date
+            type: timestamp
+        - column:
+            name: offline_cnt
+            type: INT
+        - column:
+            name: online_time
+            type: timestamp
+        - column:
+            name: phase_cnt
+            type: SMALLINT
+        - column:
+            name: reg_date
+            type: timestamp
+        - column:
+            name: region
+            type: VARCHAR(255)
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: uin
+            type: FLOAT
+        - column:
+            name: url
+            type: VARCHAR(255)
+        - column:
+            name: watt_code
+            type: VARCHAR(255)
+        - column:
+            name: zd_name
+            type: VARCHAR(255)
+        - column:
+            name: zd_pic
+            type: VARCHAR(255)
+        - column:
+            name: zd_pid
+            type: VARCHAR(255)
+        tableName: chiller_device_info
+- changeSet:
+    id: 1635277897610-9
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: chiller_run_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: ch_in_temp
+            type: FLOAT
+        - column:
+            name: ch_out_temp
+            type: FLOAT
+        - column:
+            name: co_in_temp
+            type: FLOAT
+        - column:
+            name: co_out_temp
+            type: FLOAT
+        - column:
+            name: con_pressure
+            type: FLOAT
+        - column:
+            name: con_temp
+            type: FLOAT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: eva_pressure
+            type: FLOAT
+        - column:
+            name: eva_temp
+            type: FLOAT
+        - column:
+            name: pwatt
+            type: FLOAT
+        - column:
+            name: qwatt
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        tableName: chiller_run_data
+- changeSet:
+    id: 1635277897610-10
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: chiller_run_power_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: p_rt
+            type: FLOAT
+        - column:
+            name: q_rt
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        tableName: chiller_run_power_data
+- changeSet:
+    id: 1635277897610-11
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: chiller_run_schedule_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: on_off_set
+            type: SMALLINT
+        - column:
+            name: p_limit_set
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: tem_set
+            type: FLOAT
+        - column:
+            name: time
+            type: timestamp
+        tableName: chiller_run_schedule_data
+- changeSet:
+    id: 1635277897610-12
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: chiller_run_state_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: com_starts_cnt
+            type: INT
+        - column:
+            name: con_state
+            type: SMALLINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: eva_state
+            type: SMALLINT
+        - column:
+            name: kt_msg
+            type: VARCHAR(255)
+        - column:
+            name: kt_state
+            type: SMALLINT
+        - column:
+            name: local_state
+            type: SMALLINT
+        - column:
+            name: ref_status
+            type: SMALLINT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: run_time
+            type: BIGINT
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        - column:
+            name: zd_msg
+            type: VARCHAR(255)
+        - column:
+            name: zd_state
+            type: SMALLINT
+        tableName: chiller_run_state_data
+- changeSet:
+    id: 1635277897610-13
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: devicePK
+            name: id
+            type: BIGINT
+        - column:
+            name: gateway_id
+            type: BIGINT
+        - column:
+            name: host
+            type: VARCHAR(255)
+        - column:
+            name: port
+            type: INT
+        tableName: device
+- changeSet:
+    id: 1635277897610-14
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: gw_device_infoPK
+            name: id
+            type: BIGINT
+        - column:
+            name: addr
+            type: VARCHAR(255)
+        - column:
+            name: auth_man
+            type: VARCHAR(255)
+        - column:
+            name: charger_cnt
+            type: INT
+        - column:
+            name: charger_kw
+            type: FLOAT
+        - column:
+            name: check_man
+            type: VARCHAR(255)
+        - column:
+            name: datapoint
+            type: INT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: gen_cnt
+            type: INT
+        - column:
+            name: gen_kw
+            type: FLOAT
+        - column:
+            name: gw_fcode
+            type: SMALLINT
+        - column:
+            name: gw_name
+            type: VARCHAR(255)
+        - column:
+            name: gw_pic
+            type: VARCHAR(255)
+        - column:
+            name: gw_pid
+            type: VARCHAR(255)
+        - column:
+            name: gwpos_name
+            type: VARCHAR(255)
+        - column:
+            name: lat
+            type: VARCHAR(255)
+        - column:
+            name: load_cnt
+            type: INT
+        - column:
+            name: load_kw
+            type: FLOAT
+        - column:
+            name: lon
+            type: VARCHAR(255)
+        - column:
+            name: modify_cnt
+            type: INT
+        - column:
+            name: modify_date
+            type: timestamp
+        - column:
+            name: offline_cnt
+            type: INT
+        - column:
+            name: online_time
+            type: timestamp
+        - column:
+            name: reg_date
+            type: timestamp
+        - column:
+            name: region
+            type: VARCHAR(255)
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: storage_cnt
+            type: INT
+        - column:
+            name: storage_kw
+            type: FLOAT
+        - column:
+            name: url
+            type: VARCHAR(255)
+        tableName: gw_device_info
+- changeSet:
+    id: 1635277897610-15
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: kg_device_infoPK
+            name: id
+            type: BIGINT
+        - column:
+            name: addr
+            type: VARCHAR(255)
+        - column:
+            name: auth_man
+            type: VARCHAR(255)
+        - column:
+            name: check_man
+            type: VARCHAR(255)
+        - column:
+            name: datapoint
+            type: INT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: ie
+            type: FLOAT
+        - column:
+            name: imax
+            type: FLOAT
+        - column:
+            name: kg_file
+            type: VARCHAR(255)
+        - column:
+            name: kg_name
+            type: VARCHAR(255)
+        - column:
+            name: kg_type
+            type: VARCHAR(255)
+        - column:
+            name: lat
+            type: VARCHAR(255)
+        - column:
+            name: loadtype
+            type: INT
+        - column:
+            name: lon
+            type: VARCHAR(255)
+        - column:
+            name: modify_cnt
+            type: INT
+        - column:
+            name: modify_date
+            type: timestamp
+        - column:
+            name: offline_cnt
+            type: INT
+        - column:
+            name: online_time
+            type: timestamp
+        - column:
+            name: phase_cnt
+            type: SMALLINT
+        - column:
+            name: reg_date
+            type: timestamp
+        - column:
+            name: region
+            type: VARCHAR(255)
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: ue
+            type: FLOAT
+        - column:
+            name: umax
+            type: FLOAT
+        - column:
+            name: url
+            type: VARCHAR(255)
+        - column:
+            name: watt_code
+            type: VARCHAR(255)
+        - column:
+            name: zd_fcode
+            type: SMALLINT
+        - column:
+            name: zd_name
+            type: VARCHAR(255)
+        - column:
+            name: zd_pic
+            type: VARCHAR(255)
+        - column:
+            name: zd_pid
+            type: VARCHAR(255)
+        tableName: kg_device_info
+- changeSet:
+    id: 1635277897610-16
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: kg_run_electricity_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: pwatt
+            type: FLOAT
+        - column:
+            name: qwatt
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        tableName: kg_run_electricity_data
+- changeSet:
+    id: 1635277897610-17
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: kg_run_other_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: factor
+            type: FLOAT
+        - column:
+            name: fre_rt
+            type: FLOAT
+        - column:
+            name: ia
+            type: INT
+        - column:
+            name: ia_thd
+            type: FLOAT
+        - column:
+            name: ib
+            type: INT
+        - column:
+            name: ib_thd
+            type: FLOAT
+        - column:
+            name: ic
+            type: INT
+        - column:
+            name: ic_thd
+            type: FLOAT
+        - column:
+            name: io
+            type: INT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        - column:
+            name: ua
+            type: INT
+        - column:
+            name: ua_thd
+            type: FLOAT
+        - column:
+            name: uab
+            type: INT
+        - column:
+            name: ub
+            type: INT
+        - column:
+            name: ub_thd
+            type: FLOAT
+        - column:
+            name: ubc
+            type: INT
+        - column:
+            name: uc
+            type: INT
+        - column:
+            name: uc_thd
+            type: FLOAT
+        - column:
+            name: uca
+            type: INT
+        - column:
+            name: uo
+            type: INT
+        tableName: kg_run_other_data
+- changeSet:
+    id: 1635277897610-18
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: kg_run_power_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: p_rt
+            type: FLOAT
+        - column:
+            name: q_rt
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        tableName: kg_run_power_data
+- changeSet:
+    id: 1635277897610-19
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: kg_run_schedule_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: p_set
+            type: FLOAT
+        - column:
+            name: q_set
+            type: FLOAT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        tableName: kg_run_schedule_data
+- changeSet:
+    id: 1635277897610-20
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: kg_run_state_dataPK
+            name: id
+            type: BIGINT
+        - column:
+            name: device_id
+            type: BIGINT
+        - column:
+            name: kg_msg
+            type: VARCHAR(255)
+        - column:
+            name: kg_state
+            type: SMALLINT
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: time
+            type: timestamp
+        - column:
+            name: zd_msg
+            type: VARCHAR(255)
+        - column:
+            name: zd_state
+            type: SMALLINT
+        tableName: kg_run_state_data
+- changeSet:
+    id: 1635277897610-21
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: manager_accountPK
+            name: id
+            type: BIGINT
+        - column:
+            name: department
+            type: VARCHAR(255)
+        - column:
+            name: name
+            type: VARCHAR(255)
+        - column:
+            name: profile_pic
+            type: VARCHAR(255)
+        - column:
+            name: psw
+            type: VARCHAR(255)
+        - column:
+            name: psw_mask
+            type: VARCHAR(255)
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: staff_mail
+            type: VARCHAR(255)
+        - column:
+            name: staff_tel
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: title
+            type: VARCHAR(255)
+        - column:
+            name: type
+            type: VARCHAR(255)
+        tableName: manager_account
+- changeSet:
+    id: 1635277897610-22
+    author: paakmau
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: owner_accountPK
+            name: owner_id
+            type: BIGINT
+        - column:
+            name: auth_man
+            type: VARCHAR(255)
+        - column:
+            name: check_man
+            type: VARCHAR(255)
+        - column:
+            name: contract_file
+            type: VARCHAR(255)
+        - column:
+            name: cpy_bl_file
+            type: VARCHAR(255)
+        - column:
+            name: cpy_usccq
+            type: VARCHAR(255)
+        - column:
+            name: cpyaddr
+            type: VARCHAR(255)
+        - column:
+            name: cpyname
+            type: VARCHAR(255)
+        - column:
+            name: modify_cnt
+            type: INT
+        - column:
+            name: modify_date
+            type: timestamp
+        - column:
+            name: profile_pic
+            type: VARCHAR(255)
+        - column:
+            name: psw
+            type: VARCHAR(255)
+        - column:
+            name: psw_mask
+            type: VARCHAR(255)
+        - column:
+            name: ptc_mail
+            type: VARCHAR(255)
+        - column:
+            name: ptcname_first
+            type: VARCHAR(255)
+        - column:
+            name: ptcname_second
+            type: VARCHAR(255)
+        - column:
+            name: ptctel_first
+            type: VARCHAR(255)
+        - column:
+            name: ptctel_second
+            type: VARCHAR(255)
+        - column:
+            name: reg_date
+            type: timestamp
+        - column:
+            name: remark
+            type: VARCHAR(255)
+        - column:
+            name: state
+            type: SMALLINT
+        - column:
+            name: type
+            type: VARCHAR(255)
+        tableName: owner_account
+- changeSet:
+    id: 1635277897610-23
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDX1q9p9sb8w4aatyu2k8lu4g15h
+        tableName: gw_device_info
+- changeSet:
+    id: 1635277897610-24
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDX4c2ap4e0f6in29dea0kri4w5t
+        tableName: chiller_run_power_data
+- changeSet:
+    id: 1635277897610-25
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDX6h047jmtu44fjc0cpriyv775n
+        tableName: chiller_run_data
+- changeSet:
+    id: 1635277897610-26
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDX8qf21ao1cac7flb4isdvn4n99
+        tableName: kg_run_electricity_data
+- changeSet:
+    id: 1635277897610-27
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDX9u6kiwklrekg2912f3sc0tgan
+        tableName: kg_run_other_data
+- changeSet:
+    id: 1635277897610-28
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXc1byol0ombvrdiplrt3t3o2mr
+        tableName: charger_run_power_data
+- changeSet:
+    id: 1635277897610-29
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXc1h30675tyw3pm4dt10boodrv
+        tableName: charger_device_info
+- changeSet:
+    id: 1635277897610-30
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXd4ycwk2vxfobyrv44r2f0r4k5
+        tableName: kg_device_info
+- changeSet:
+    id: 1635277897610-31
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXhvnu6korco21ndjbpijue83wx
+        tableName: chiller_run_state_data
+- changeSet:
+    id: 1635277897610-32
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXhym8swvfdwj92y5qlcpsoowgb
+        tableName: kg_run_schedule_data
+- changeSet:
+    id: 1635277897610-33
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXlgqxxog7l6kwodv7v1lv5p8m9
+        tableName: charger_run_electricity_data
+- changeSet:
+    id: 1635277897610-34
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXlkydphkrjreu3fhxy9nq30f35
+        tableName: charger_run_other_data
+- changeSet:
+    id: 1635277897610-35
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXmk3ovfkgsykb3h85m5hiiueby
+        tableName: charger_run_state_data
+- changeSet:
+    id: 1635277897610-36
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXnl791oil1msn310v063y8c26m
+        tableName: kg_run_power_data
+- changeSet:
+    id: 1635277897610-37
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXq4d6025xa18hlq6hom6s5121y
+        tableName: charger_run_schedule_data
+- changeSet:
+    id: 1635277897610-38
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXr0huetnlc360h84w5gwbirb6h
+        tableName: chiller_run_schedule_data
+- changeSet:
+    id: 1635277897610-39
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXt3fkehdby2xchdd498v45xq2g
+        tableName: chiller_device_info
+- changeSet:
+    id: 1635277897610-40
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXtcc08tu4515up6pn19h0hp2oi
+        tableName: charger_run_energy_data
+- changeSet:
+    id: 1635277897610-41
+    author: paakmau
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: device_id
+        indexName: IDXtmm4yx7r15x73d9our8komrmw
+        tableName: kg_run_state_data
