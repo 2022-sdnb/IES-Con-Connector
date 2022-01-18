@@ -6,10 +6,6 @@ import com.example.connector.vo.chiller.ChillerRunPowerDataVo;
 import com.example.connector.vo.chiller.ChillerRunStateDataVo;
 import java.util.List;
 
-/**
- * @author Lmt
- * @date 2021/10/10 10:09
- */
 public interface ChillerService {
     List<ChillerDeviceInfoVo> getAllDeviceInfos();
 

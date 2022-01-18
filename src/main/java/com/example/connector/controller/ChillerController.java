@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author Lmt
- * @date 2021/10/10 10:07
- */
 @RestController
 @RequestMapping(value = "chiller")
 public class ChillerController {

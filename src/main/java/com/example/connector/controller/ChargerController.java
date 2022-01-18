@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author Lmt
- * @date 2021/10/10 15:35
- */
 @RestController
 @RequestMapping(value = "charger")
 public class ChargerController {

@@ -3,10 +3,6 @@ package com.example.connector.service.charger;
 import com.example.connector.vo.charger.*;
 import java.util.List;
 
-/**
- * @author Lmt
- * @date 2021/10/10 15:37
- */
 public interface ChargerService {
     List<ChargerDeviceInfoVo> getAllDeviceInfos();
 

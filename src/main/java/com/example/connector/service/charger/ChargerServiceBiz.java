@@ -2,10 +2,6 @@ package com.example.connector.service.charger;
 
 import com.example.connector.bo.charger.*;
 
-/**
- * @author Lmt
- * @date 2021/10/10 15:37
- */
 public interface ChargerServiceBiz {
     void updateDeviceInfo(ChargerDeviceInfoBo bo);
 

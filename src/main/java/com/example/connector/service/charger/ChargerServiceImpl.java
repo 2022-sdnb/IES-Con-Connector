@@ -10,10 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * @author Lmt
- * @date 2021/10/10 15:38
- */
 @Slf4j
 @Service
 public class ChargerServiceImpl implements ChargerService, ChargerServiceBiz {

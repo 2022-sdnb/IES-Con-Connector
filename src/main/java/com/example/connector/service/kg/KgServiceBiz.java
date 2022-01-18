@@ -6,10 +6,6 @@ import com.example.connector.bo.kg.KgRunOtherDataBo;
 import com.example.connector.bo.kg.KgRunPowerDataBo;
 import com.example.connector.bo.kg.KgRunStateDataBo;
 
-/**
- * @author Lmt
- * @date 2021/9/10 15:24
- */
 public interface KgServiceBiz {
     void updateDeviceInfo(KgDeviceInfoBo bo);
 

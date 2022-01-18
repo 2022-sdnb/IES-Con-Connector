@@ -6,10 +6,6 @@ import com.example.connector.bo.chiller.ChillerRunPowerDataBo;
 import com.example.connector.bo.chiller.ChillerRunScheduleDataBo;
 import com.example.connector.bo.chiller.ChillerRunStateDataBo;
 
-/**
- * @author Lmt
- * @date 2021/10/10 10:09
- */
 public interface ChillerServiceBiz {
     void updateDeviceInfo(ChillerDeviceInfoBo bo);
 
