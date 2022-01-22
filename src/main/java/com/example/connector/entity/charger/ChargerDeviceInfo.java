@@ -55,4 +55,9 @@ public class ChargerDeviceInfo {
     private String zdPic;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public ChargerDeviceInfo(long id) {
+        this.id = id;
+    }
 }

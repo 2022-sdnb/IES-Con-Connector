@@ -83,4 +83,13 @@ public class ChargerDeviceInfoVo {
         state = deviceInfo.getState();
         remark = deviceInfo.getRemark();
     }
+
+    /** for test usage */
+    public ChargerDeviceInfoVo(long id) {
+        this.id = id;
+    }
+
+    public static ChargerDeviceInfoVo fromEntity(ChargerDeviceInfo info) {
+        return new ChargerDeviceInfoVo(info.getId());
+    }
 }
