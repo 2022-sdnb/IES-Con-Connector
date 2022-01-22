@@ -35,4 +35,9 @@ public class ChargerRunElectricityData {
     private Float income4;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public ChargerRunElectricityData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }

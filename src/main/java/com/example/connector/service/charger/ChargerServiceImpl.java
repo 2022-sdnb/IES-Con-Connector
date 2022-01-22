@@ -91,4 +91,9 @@ public class ChargerServiceImpl implements ChargerService, ChargerServiceBiz {
     public void addRunElectricityData(ChargerRunElectricityDataBo bo) {
         chargerRunElectricityDataRepository.save(bo.getEntity());
     }
+
+    /** for test usage */
+    public ChargerServiceImpl(ChargerRunElectricityDataRepository repo) {
+        this.chargerRunElectricityDataRepository = repo;
+    }
 }

@@ -1,11 +1,16 @@
 package com.example.connector.service.charger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.example.connector.bo.charger.ChargerDeviceInfoBo;
+import com.example.connector.bo.charger.ChargerRunElectricityDataBo;
 import com.example.connector.entity.charger.ChargerDeviceInfo;
+import com.example.connector.entity.charger.ChargerRunElectricityData;
 import com.example.connector.repo.charger.ChargerDeviceInfoRepository;
+import com.example.connector.repo.charger.ChargerRunElectricityDataRepository;
 import com.example.connector.vo.charger.ChargerDeviceInfoVo;
+import com.example.connector.vo.charger.ChargerRunElectricityDataVo;
 import java.util.*;
 import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +26,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 @SpringBootTest
 class ChargerServiceImplTest {
 
+    // 初始化充电桩静态数据
     private final List<ChargerDeviceInfo> infos =
             Arrays.asList(
                     new ChargerDeviceInfo(6, 0),
@@ -29,7 +35,18 @@ class ChargerServiceImplTest {
                     new ChargerDeviceInfo(8, 0),
                     new ChargerDeviceInfo(9, 0));
 
+    // 初始化充电桩交易数据
+    private final List<ChargerRunElectricityData> datas =
+            Arrays.asList(
+                    new ChargerRunElectricityData(1),
+                    new ChargerRunElectricityData(3),
+                    new ChargerRunElectricityData(5));
+
+    static int dataSize = 3;
+
     private List<ChargerDeviceInfoVo> infoVos;
+
+    private List<ChargerRunElectricityDataVo> dataVos;
 
     @MockBean private ChargerDeviceInfoRepository repository;
 
@@ -48,6 +65,10 @@ class ChargerServiceImplTest {
                     }
                 });
         infoVos = infos.stream().map(ChargerDeviceInfoVo::fromEntity).collect(Collectors.toList());
+        dataVos =
+                datas.stream()
+                        .map(ChargerRunElectricityDataVo::fromEntity)
+                        .collect(Collectors.toList());
     }
 
     @AfterEach
@@ -110,6 +131,53 @@ class ChargerServiceImplTest {
         for (ChargerDeviceInfo info : infos) {
             Mockito.verify(failed, Mockito.never()).updateEntity(info);
             assertEquals(0, info.getModifyCnt());
+        }
+    }
+
+    @Test
+    void addRunElectricityData() {
+        long deviceId = 2;
+        long time = 10, startTime = 10;
+        float pwatt1 = 1.0f, pwatt2 = 2.0f, pwatt3 = 3.0f, pwatt4 = 4.0f;
+        float income1 = 1.0f, income2 = 2.0f, income3 = 3.0f, income4 = 4.0f;
+        ChargerRunElectricityDataBo add =
+                new ChargerRunElectricityDataBo(
+                        deviceId, time, startTime, pwatt1, pwatt2, pwatt3, pwatt4, income1, income2,
+                        income3, income4);
+
+        int previousSize = dataSize;
+        ChargerRunElectricityDataRepository repo =
+                Mockito.mock(ChargerRunElectricityDataRepository.class);
+        ChargerServiceImpl addService = new ChargerServiceImpl(repo);
+        Mockito.doAnswer(
+                        invocation -> {
+                            dataSize++;
+                            return null;
+                        })
+                .when(repo)
+                .save(add.getEntity());
+
+        addService.addRunElectricityData(add);
+
+        Mockito.verify(repo, Mockito.atLeastOnce()).save(add.getEntity());
+        assertEquals(previousSize + 1, dataSize);
+    }
+
+    @Test
+    void getAllRunElectricityDatas1() {
+        ChargerRunElectricityDataRepository repo =
+                Mockito.mock(ChargerRunElectricityDataRepository.class);
+        ChargerServiceImpl getService = new ChargerServiceImpl(repo);
+
+        long deviceId = 1;
+        Mockito.when(repo.findAll()).thenReturn(datas);
+
+        List<ChargerRunElectricityDataVo> actualVos =
+                getService.getAllRunElectricityDatas(deviceId);
+        for (int i = 0; i < dataVos.size(); i++) {
+            // 确保没有发生越界，否则说明获取的不全
+            assertTrue(i < actualVos.size());
+            assertEquals(dataVos.get(i), actualVos.get(i));
         }
     }
 }

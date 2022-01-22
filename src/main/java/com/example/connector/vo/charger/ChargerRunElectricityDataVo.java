@@ -44,4 +44,13 @@ public class ChargerRunElectricityDataVo {
         state = data.getState();
         remark = data.getRemark();
     }
+
+    /** for test usage */
+    public ChargerRunElectricityDataVo(long deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public static ChargerRunElectricityDataVo fromEntity(ChargerRunElectricityData data) {
+        return new ChargerRunElectricityDataVo(data.getDeviceId());
+    }
 }
