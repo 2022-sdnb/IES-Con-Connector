@@ -23,11 +23,11 @@ class ChargerServiceImplTest {
 
     private final List<ChargerDeviceInfo> infos =
             Arrays.asList(
-                    new ChargerDeviceInfo(6),
-                    new ChargerDeviceInfo(4),
-                    new ChargerDeviceInfo(2),
-                    new ChargerDeviceInfo(8),
-                    new ChargerDeviceInfo(9));
+                    new ChargerDeviceInfo(6, 0),
+                    new ChargerDeviceInfo(4, 0),
+                    new ChargerDeviceInfo(2, 0),
+                    new ChargerDeviceInfo(8, 0),
+                    new ChargerDeviceInfo(9, 0));
 
     private List<ChargerDeviceInfoVo> infoVos;
 
@@ -109,7 +109,7 @@ class ChargerServiceImplTest {
         // 验证确实没有调用update方法，也就是在调用前就捕捉到null并返回
         for (ChargerDeviceInfo info : infos) {
             Mockito.verify(failed, Mockito.never()).updateEntity(info);
+            assertEquals(0, info.getModifyCnt());
         }
-        assertEquals(2, infos.get(0).getId());
     }
 }

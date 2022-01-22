@@ -57,7 +57,8 @@ public class ChargerDeviceInfo {
     private String remark;
 
     /** for test usage */
-    public ChargerDeviceInfo(long id) {
+    public ChargerDeviceInfo(long id, int modifyCnt) {
         this.id = id;
+        this.modifyCnt = modifyCnt;
     }
 }

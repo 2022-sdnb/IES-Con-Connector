@@ -85,11 +85,12 @@ public class ChargerDeviceInfoVo {
     }
 
     /** for test usage */
-    public ChargerDeviceInfoVo(long id) {
+    public ChargerDeviceInfoVo(long id, int modifyCnt) {
         this.id = id;
+        this.modifyCnt = modifyCnt;
     }
 
     public static ChargerDeviceInfoVo fromEntity(ChargerDeviceInfo info) {
-        return new ChargerDeviceInfoVo(info.getId());
+        return new ChargerDeviceInfoVo(info.getId(), info.getModifyCnt());
     }
 }
