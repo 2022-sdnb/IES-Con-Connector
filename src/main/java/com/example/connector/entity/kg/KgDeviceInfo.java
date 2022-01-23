@@ -50,4 +50,9 @@ public class KgDeviceInfo {
     private String zdPic;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public KgDeviceInfo(long id) {
+        this.id = id;
+    }
 }
