@@ -54,4 +54,9 @@ public class ChillerDeviceInfo {
     private String zdPic;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public ChillerDeviceInfo(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }
