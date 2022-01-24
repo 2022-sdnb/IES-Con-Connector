@@ -56,7 +56,7 @@ public class ChillerDeviceInfo {
     private String remark;
 
     /** for test usage */
-    public ChillerDeviceInfo(long deviceId) {
-        this.deviceId = deviceId;
+    public ChillerDeviceInfo(long id) {
+        this.id = id;
     }
 }
