@@ -22,6 +22,7 @@ public class ChargerServiceImpl implements ChargerService, ChargerServiceBiz {
 
     @Override
     public List<ChargerDeviceInfoVo> getAllDeviceInfos() {
+        // map调用Vo的构造方法从repo得到的entity中构建返回给上层的Vo对象
         return chargerDeviceInfoRepository.findAll().stream()
                 .map(ChargerDeviceInfoVo::new)
                 .collect(Collectors.toList());
@@ -70,6 +71,7 @@ public class ChargerServiceImpl implements ChargerService, ChargerServiceBiz {
 
     @Override
     public void addRunOtherData(ChargerRunOtherDataBo bo) {
+        // 通过Bo来承载相应的业务数据，下面也是一样的逻辑
         chargerRunOtherDataRepository.save(bo.getEntity());
     }
 
@@ -91,10 +93,5 @@ public class ChargerServiceImpl implements ChargerService, ChargerServiceBiz {
     @Override
     public void addRunElectricityData(ChargerRunElectricityDataBo bo) {
         chargerRunElectricityDataRepository.save(bo.getEntity());
-    }
-
-    /** for test usage */
-    public ChargerServiceImpl(ChargerRunElectricityDataRepository repo) {
-        this.chargerRunElectricityDataRepository = repo;
     }
 }
