@@ -59,6 +59,7 @@ public class ChargerServiceImpl implements ChargerService, ChargerServiceBiz {
     public void updateDeviceInfo(ChargerDeviceInfoBo bo) {
         Long id = bo.getId();
         ChargerDeviceInfo deviceInfo = chargerDeviceInfoRepository.findById(id).orElse(null);
+        // 需要确保数据库中相应数据条目存在
         if (deviceInfo == null) {
             log.warn("负控设备不存在, id: {}", id);
             return;
