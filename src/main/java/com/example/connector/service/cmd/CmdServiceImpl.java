@@ -348,4 +348,9 @@ public class CmdServiceImpl implements CmdService {
 
         return 0l;
     }
+
+    /** for test usage */
+    public void setDeviceGateway(DeviceGateway gateway) {
+        this.deviceGateway = gateway;
+    }
 }
