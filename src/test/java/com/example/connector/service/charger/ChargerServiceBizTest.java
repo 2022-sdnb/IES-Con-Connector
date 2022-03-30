@@ -2,9 +2,7 @@ package com.example.connector.service.charger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.example.connector.bo.charger.ChargerDeviceInfoBo;
-import com.example.connector.bo.charger.ChargerRunElectricityDataBo;
-import com.example.connector.bo.charger.ChargerRunOtherDataBo;
+import com.example.connector.bo.charger.*;
 import com.example.connector.entity.charger.ChargerDeviceInfo;
 import com.example.connector.repo.charger.*;
 import java.util.List;
@@ -23,6 +21,10 @@ class ChargerServiceBizTest {
     static int dataSize = 1;
 
     static int otherDataSize = 1;
+
+    static int powerDataSize = 1;
+
+    static int stateDataSize = 1;
 
     @MockBean private ChargerDeviceInfoRepository deviceInfoRepository;
 
@@ -101,6 +103,53 @@ class ChargerServiceBizTest {
 
         Mockito.verify(runOtherDataRepository, Mockito.atLeastOnce()).save(add.getEntity());
         assertEquals(previousSize + 1, otherDataSize);
+    }
+
+    @Test
+    void addRunPowerData() {
+        long deviceId = 0, time = 3;
+        float pinRt = 2.3f, qinRt = 2.4f;
+        ChargerRunPowerDataBo add = new ChargerRunPowerDataBo(deviceId, time, pinRt, qinRt);
+
+        int previousSize = powerDataSize;
+        Mockito.doAnswer(
+                        invocation -> {
+                            powerDataSize++;
+                            return null;
+                        })
+                .when(runPowerDataRepository)
+                .save(add.getEntity());
+
+        service.addRunPowerData(add);
+
+        Mockito.verify(runPowerDataRepository, Mockito.atLeastOnce()).save(add.getEntity());
+        assertEquals(previousSize + 1, powerDataSize);
+    }
+
+    @Test
+    void addRunStateData() {
+        long deviceId = 0, time = 4;
+        short cdState = 1, zdState = 2;
+        String cdMsg = "cd-test", zdMsg = "zd-test";
+        short cdFlag1 = 1, cdFlag2 = 2, cdFlag3 = 3, cdFlag4 = 4;
+        ChargerRunStateDataBo add =
+                new ChargerRunStateDataBo(
+                        deviceId, time, cdState, cdMsg, zdState, zdMsg, cdFlag1, cdFlag2, cdFlag3,
+                        cdFlag4);
+
+        int previousSize = stateDataSize;
+        Mockito.doAnswer(
+                        invocation -> {
+                            stateDataSize++;
+                            return null;
+                        })
+                .when(runStateDataRepository)
+                .save(add.getEntity());
+
+        service.addRunStateData(add);
+
+        Mockito.verify(runStateDataRepository, Mockito.atLeastOnce()).save(add.getEntity());
+        assertEquals(previousSize + 1, stateDataSize);
     }
 
     @Test
