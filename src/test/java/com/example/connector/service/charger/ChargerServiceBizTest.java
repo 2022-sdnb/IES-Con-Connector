@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.example.connector.bo.charger.ChargerDeviceInfoBo;
 import com.example.connector.bo.charger.ChargerRunElectricityDataBo;
+import com.example.connector.bo.charger.ChargerRunOtherDataBo;
 import com.example.connector.entity.charger.ChargerDeviceInfo;
-import com.example.connector.repo.charger.ChargerDeviceInfoRepository;
-import com.example.connector.repo.charger.ChargerRunElectricityDataRepository;
+import com.example.connector.repo.charger.*;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
@@ -22,9 +22,17 @@ class ChargerServiceBizTest {
 
     static int dataSize = 1;
 
+    static int otherDataSize = 1;
+
     @MockBean private ChargerDeviceInfoRepository deviceInfoRepository;
 
     @MockBean private ChargerRunElectricityDataRepository runElectricityDataRepository;
+
+    @MockBean private ChargerRunOtherDataRepository runOtherDataRepository;
+
+    @MockBean private ChargerRunPowerDataRepository runPowerDataRepository;
+
+    @MockBean private ChargerRunStateDataRepository runStateDataRepository;
 
     @Autowired private ChargerServiceBiz service;
 
@@ -52,6 +60,47 @@ class ChargerServiceBizTest {
 
         Mockito.verify(runElectricityDataRepository, Mockito.atLeastOnce()).save(add.getEntity());
         assertEquals(previousSize + 1, dataSize);
+    }
+
+    @Test
+    void addRunOtherData() {
+        long deviceId = 2, time = 10;
+        float factor = 1.0f,
+                ua = 2.0f,
+                ub = 3.0f,
+                uc = 4.0f,
+                uo = 5.0f,
+                ia = 6.0f,
+                ib = 7.0f,
+                ic = 8.0f,
+                io = 9.0f,
+                uab = 1.0f,
+                ubc = 1.0f,
+                uca = -2.0f,
+                uaThd = 0.0f,
+                ubThd = 0.0f,
+                ucThd = 0.0f,
+                iaThd = 1.0f,
+                ibThd = 1.0f,
+                icThd = 1.0f;
+        ChargerRunOtherDataBo add =
+                new ChargerRunOtherDataBo(
+                        deviceId, time, factor, ua, ub, uc, uo, ia, ib, ic, io, uab, ubc, uca,
+                        uaThd, ubThd, ucThd, iaThd, ibThd, icThd);
+
+        int previousSize = otherDataSize;
+        Mockito.doAnswer(
+                        invocation -> {
+                            otherDataSize++;
+                            return null;
+                        })
+                .when(runOtherDataRepository)
+                .save(add.getEntity());
+
+        service.addRunOtherData(add);
+
+        Mockito.verify(runOtherDataRepository, Mockito.atLeastOnce()).save(add.getEntity());
+        assertEquals(previousSize + 1, otherDataSize);
     }
 
     @Test
