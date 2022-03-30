@@ -36,4 +36,9 @@ public class ChillerRunStateData {
     private Long runTime;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public ChillerRunStateData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }

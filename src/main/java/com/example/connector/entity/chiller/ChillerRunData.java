@@ -36,4 +36,9 @@ public class ChillerRunData {
     private Float conPressure;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public ChillerRunData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }

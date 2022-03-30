@@ -28,4 +28,9 @@ public class ChillerRunPowerData {
     private Float qRt;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public ChillerRunPowerData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }
