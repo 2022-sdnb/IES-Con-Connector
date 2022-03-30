@@ -28,4 +28,9 @@ public class KgRunPowerData {
     private Float qRt;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public KgRunPowerData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }

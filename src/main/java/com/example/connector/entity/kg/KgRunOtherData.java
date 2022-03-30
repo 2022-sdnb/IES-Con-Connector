@@ -45,4 +45,9 @@ public class KgRunOtherData {
     private Float icThd;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public KgRunOtherData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }

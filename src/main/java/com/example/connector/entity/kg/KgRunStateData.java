@@ -30,4 +30,9 @@ public class KgRunStateData {
     private String zdMsg;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public KgRunStateData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }
