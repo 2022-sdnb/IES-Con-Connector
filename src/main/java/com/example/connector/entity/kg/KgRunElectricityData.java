@@ -28,4 +28,9 @@ public class KgRunElectricityData {
     private Float qwatt;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public KgRunElectricityData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }
