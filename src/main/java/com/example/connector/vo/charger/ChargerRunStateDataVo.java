@@ -42,4 +42,13 @@ public class ChargerRunStateDataVo {
         state = data.getState();
         remark = data.getRemark();
     }
+
+    /** for test usage */
+    public ChargerRunStateDataVo(long deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public static ChargerRunStateDataVo fromEntity(ChargerRunStateData data) {
+        return new ChargerRunStateDataVo(data.getDeviceId());
+    }
 }

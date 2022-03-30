@@ -28,4 +28,9 @@ public class ChargerRunPowerData {
     private Float qinRt;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public ChargerRunPowerData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }

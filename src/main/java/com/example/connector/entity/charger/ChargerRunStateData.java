@@ -34,4 +34,9 @@ public class ChargerRunStateData {
     private Short cdFlag4;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public ChargerRunStateData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }

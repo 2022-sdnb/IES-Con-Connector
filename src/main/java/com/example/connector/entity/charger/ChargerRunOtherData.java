@@ -44,4 +44,9 @@ public class ChargerRunOtherData {
     private Float icThd;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public ChargerRunOtherData(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }

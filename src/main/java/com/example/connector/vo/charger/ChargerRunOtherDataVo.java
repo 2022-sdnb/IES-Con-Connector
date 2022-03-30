@@ -63,4 +63,13 @@ public class ChargerRunOtherDataVo {
         state = data.getState();
         remark = data.getRemark();
     }
+
+    /** for test usage */
+    public ChargerRunOtherDataVo(long deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public static ChargerRunOtherDataVo fromEntity(ChargerRunOtherData data) {
+        return new ChargerRunOtherDataVo(data.getDeviceId());
+    }
 }
