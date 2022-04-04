@@ -1,6 +1,5 @@
 package com.example.connector.service.cmd;
 
-import com.example.connector.gateway.device.DeviceGateway;
 import com.example.connector.vo.cmd.ChargerControlVo;
 import com.example.connector.vo.cmd.ChillerControlVo;
 import com.example.connector.vo.cmd.DeviceInfoPullVo;
@@ -17,7 +16,4 @@ public interface CmdService {
     Long addChargerControlCmd(ChargerControlVo vo);
 
     Long addChillerControlCmd(ChillerControlVo vo);
-
-    /** for test usage */
-    void setDeviceGateway(DeviceGateway gateway);
 }

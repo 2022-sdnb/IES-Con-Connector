@@ -31,7 +31,6 @@ class CmdServiceTest {
 
         DeviceInfoPullVo vo = new DeviceInfoPullVo();
         vo.setClientId(0);
-        service.setDeviceGateway(deviceGateway);
 
         RequestGo requestGo = new RequestGo(TimeUtil.nowUnixTimeStamp(), type, gson.toJson(r));
 
