@@ -2,7 +2,6 @@ package com.example.connector.service.cmd;
 
 import com.example.connector.bo.device.DeviceBo;
 import com.example.connector.gateway.device.DeviceGateway;
-import com.example.connector.gateway.device.DeviceGatewayImpl;
 import com.example.connector.go.device.ClientGo;
 import com.example.connector.go.device.RequestGo;
 import com.example.connector.go.device.ResponseGo;
@@ -230,7 +229,7 @@ public class CmdServiceImpl implements CmdService {
     @Autowired ChillerServiceBiz chillerService;
     @Autowired ChargerServiceBiz chargerService;
 
-    DeviceGateway deviceGateway = new DeviceGatewayImpl();
+    @Autowired DeviceGateway deviceGateway;
 
     @PostConstruct
     void init() {
