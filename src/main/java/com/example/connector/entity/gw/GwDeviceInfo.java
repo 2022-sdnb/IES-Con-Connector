@@ -51,4 +51,9 @@ public class GwDeviceInfo {
     private String gwPic;
     private Short state;
     private String remark;
+
+    /** for test usage */
+    public GwDeviceInfo(long deviceId) {
+        this.deviceId = deviceId;
+    }
 }
