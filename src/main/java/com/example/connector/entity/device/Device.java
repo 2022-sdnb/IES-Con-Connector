@@ -18,4 +18,10 @@ public class Device {
     private String host;
 
     private Integer port;
+
+    /** for test usage */
+    public Device(String host, int port) {
+        this.host = host;
+        this.port = port;
+    }
 }

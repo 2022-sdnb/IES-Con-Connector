@@ -2,8 +2,7 @@ package com.example.connector.service.cmd;
 
 import com.example.connector.gateway.device.DeviceGateway;
 import com.example.connector.util.TimeUtil;
-import com.example.connector.vo.cmd.DeviceInfoPullVo;
-import com.example.connector.vo.cmd.DeviceRunDataPullVo;
+import com.example.connector.vo.cmd.*;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +30,36 @@ class CmdServiceTest {
         DeviceRunDataPullVo vo = new DeviceRunDataPullVo(0, TimeUtil.nowUnixTimeStamp());
 
         service.addDeviceRunDataCmd(vo);
+        Mockito.verify(deviceGateway, Mockito.atLeastOnce())
+                .send(Mockito.eq(vo.getClientId()), Mockito.any(), Mockito.any());
+    }
+
+    @Test
+    void addKgControlCmd() {
+        KgControlVo vo = new KgControlVo();
+        vo.setClientId(1);
+
+        service.addKgControlCmd(vo);
+        Mockito.verify(deviceGateway, Mockito.atLeastOnce())
+                .send(Mockito.eq(vo.getClientId()), Mockito.any(), Mockito.any());
+    }
+
+    @Test
+    void addChargerControlCmd() {
+        ChargerControlVo vo = new ChargerControlVo();
+        vo.setClientId(2);
+
+        service.addChargerControlCmd(vo);
+        Mockito.verify(deviceGateway, Mockito.atLeastOnce())
+                .send(Mockito.eq(vo.getClientId()), Mockito.any(), Mockito.any());
+    }
+
+    @Test
+    void addChillerControlCmd() {
+        ChillerControlVo vo = new ChillerControlVo();
+        vo.setClientId(2);
+
+        service.addChillerControlCmd(vo);
         Mockito.verify(deviceGateway, Mockito.atLeastOnce())
                 .send(Mockito.eq(vo.getClientId()), Mockito.any(), Mockito.any());
     }
