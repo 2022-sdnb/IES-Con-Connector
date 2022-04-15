@@ -10,11 +10,11 @@ import lombok.Data;
 public class ChargerDeviceInfoBo {
     private final long id;
 
-    private final short zdFcode;
-    private final short cdFcode;
+    private final Short zdFcode;
+    private final Short cdFcode;
     private final String cdPid;
-    private final short outCnt;
-    private final short phaseCnt;
+    private final Short outCnt;
+    private final Short phaseCnt;
     private final Float inUe;
     private final Float inIe;
     private final Float inPower;

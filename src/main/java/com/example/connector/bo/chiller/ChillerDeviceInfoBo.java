@@ -10,7 +10,7 @@ import lombok.Data;
 public class ChillerDeviceInfoBo {
     private final long id;
 
-    private final short ktFcode;
+    private final Short ktFcode;
     private final String ktPid;
     private final Float capCool;
     private final Float capHeat;
@@ -19,7 +19,7 @@ public class ChillerDeviceInfoBo {
     private final Float iMin;
     private final Float iBreak;
     private final Float uIn;
-    private final short phaseCnt;
+    private final Short phaseCnt;
     private final Integer dataPoint;
 
     public void updateEntity(ChillerDeviceInfo deviceInfo) {

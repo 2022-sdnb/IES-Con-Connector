@@ -13,14 +13,14 @@ public class ChargerRunStateDataBo {
     private final long deviceId;
 
     private final Long time;
-    private final short cdState;
+    private final Short cdState;
     private final String cdMsg;
-    private final short zdState;
+    private final Short zdState;
     private final String zdMsg;
-    private final short cdFlag1;
-    private final short cdFlag2;
-    private final short cdFlag3;
-    private final short cdFlag4;
+    private final Short cdFlag1;
+    private final Short cdFlag2;
+    private final Short cdFlag3;
+    private final Short cdFlag4;
 
     public ChargerRunStateData getEntity() {
         LocalDateTime dateTime =

@@ -13,9 +13,9 @@ public class KgRunStateDataBo {
     private final long deviceId;
 
     private final Long time;
-    private final short kgState;
+    private final Short kgState;
     private final String kgMsg;
-    private final short zdState;
+    private final Short zdState;
     private final String zdMsg;
 
     public KgRunStateData getEntity() {

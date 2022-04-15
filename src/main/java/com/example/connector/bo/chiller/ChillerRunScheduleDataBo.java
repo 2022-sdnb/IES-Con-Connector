@@ -13,7 +13,7 @@ public class ChillerRunScheduleDataBo {
     private final long deviceId;
 
     private final Long time;
-    private final short onOffSet;
+    private final Short onOffSet;
     private final Float temSet;
     private final Float pLimitSet;
 

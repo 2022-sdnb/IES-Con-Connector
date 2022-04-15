@@ -10,7 +10,7 @@ import lombok.Data;
 public class GwDeviceInfoBo {
     private final long id;
 
-    private final short gwFcode;
+    private final Short gwFcode;
     private final Integer genCnt;
     private final Float genKw;
     private final Integer loadCnt;
