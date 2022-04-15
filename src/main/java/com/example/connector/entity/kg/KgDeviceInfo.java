@@ -42,7 +42,7 @@ public class KgDeviceInfo {
     private LocalDateTime onlineTime;
     private LocalDateTime regDate;
     private LocalDateTime modifyDate;
-    private Integer modifyCnt;
+    private Integer modifyCnt = 0;
     private String checkMan;
     private String authMan;
     private String zdPid;
