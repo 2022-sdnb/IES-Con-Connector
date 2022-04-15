@@ -72,8 +72,8 @@ public class KgServiceImpl implements KgService, KgServiceBiz {
         Long id = bo.getId();
         KgDeviceInfo deviceInfo = kgDeviceInfoRepository.findById(id).orElse(null);
         if (deviceInfo == null) {
-            log.warn("负控设备不存在, id: {}", id);
-            return;
+            log.info("负控设备不存在, id: {}", id);
+            deviceInfo = new KgDeviceInfo(id);
         }
         bo.updateEntity(deviceInfo);
         kgDeviceInfoRepository.save(deviceInfo);

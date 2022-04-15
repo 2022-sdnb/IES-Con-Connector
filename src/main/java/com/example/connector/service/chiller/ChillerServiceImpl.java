@@ -63,8 +63,8 @@ public class ChillerServiceImpl implements ChillerService, ChillerServiceBiz {
         Long id = bo.getId();
         ChillerDeviceInfo deviceInfo = chillerDeviceInfoRepository.findById(id).orElse(null);
         if (deviceInfo == null) {
-            log.warn("负控设备不存在, id: {}", id);
-            return;
+            log.info("空调设备不存在, id: {}", id);
+            deviceInfo = new ChillerDeviceInfo(id);
         }
         bo.updateEntity(deviceInfo);
         chillerDeviceInfoRepository.save(deviceInfo);
