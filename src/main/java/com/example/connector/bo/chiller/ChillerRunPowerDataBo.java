@@ -12,9 +12,9 @@ import lombok.Data;
 public class ChillerRunPowerDataBo {
     private final long deviceId;
 
-    private final long time;
-    private final float pRt;
-    private final float qRt;
+    private final Long time;
+    private final Float pRt;
+    private final Float qRt;
 
     public ChillerRunPowerData getEntity() {
         LocalDateTime dateTime =

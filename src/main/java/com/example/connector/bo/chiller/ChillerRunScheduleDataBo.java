@@ -12,10 +12,10 @@ import lombok.Data;
 public class ChillerRunScheduleDataBo {
     private final long deviceId;
 
-    private final long time;
+    private final Long time;
     private final short onOffSet;
-    private final float temSet;
-    private final float pLimitSet;
+    private final Float temSet;
+    private final Float pLimitSet;
 
     public ChillerRunScheduleData getEntity() {
         LocalDateTime dateTime =

@@ -12,26 +12,26 @@ import lombok.Data;
 public class KgRunOtherDataBo {
     private final long deviceId;
 
-    private final long time;
-    private final float freRt;
-    private final float factor;
-    private final int ua;
-    private final int ub;
-    private final int uc;
-    private final int uo;
-    private final int ia;
-    private final int ib;
-    private final int ic;
-    private final int io;
-    private final int uab;
-    private final int ubc;
-    private final int uca;
-    private final float uaThd;
-    private final float ubThd;
-    private final float ucThd;
-    private final float iaThd;
-    private final float ibThd;
-    private final float icThd;
+    private final Long time;
+    private final Float freRt;
+    private final Float factor;
+    private final Integer ua;
+    private final Integer ub;
+    private final Integer uc;
+    private final Integer uo;
+    private final Integer ia;
+    private final Integer ib;
+    private final Integer ic;
+    private final Integer io;
+    private final Integer uab;
+    private final Integer ubc;
+    private final Integer uca;
+    private final Float uaThd;
+    private final Float ubThd;
+    private final Float ucThd;
+    private final Float iaThd;
+    private final Float ibThd;
+    private final Float icThd;
 
     public KgRunOtherData getEntity() {
         LocalDateTime dateTime =

@@ -12,7 +12,7 @@ import lombok.Data;
 public class KgRunStateDataBo {
     private final long deviceId;
 
-    private final long time;
+    private final Long time;
     private final short kgState;
     private final String kgMsg;
     private final short zdState;

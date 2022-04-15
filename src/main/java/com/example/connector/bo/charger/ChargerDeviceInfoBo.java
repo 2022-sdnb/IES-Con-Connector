@@ -15,13 +15,13 @@ public class ChargerDeviceInfoBo {
     private final String cdPid;
     private final short outCnt;
     private final short phaseCnt;
-    private final float inUe;
-    private final float inIe;
-    private final float inPower;
-    private final float outUe;
-    private final float outIe;
-    private final float outPower;
-    private final int datapoint;
+    private final Float inUe;
+    private final Float inIe;
+    private final Float inPower;
+    private final Float outUe;
+    private final Float outIe;
+    private final Float outPower;
+    private final Integer datapoint;
 
     public void updateEntity(ChargerDeviceInfo deviceInfo) {
         deviceInfo.setZdFcode(zdFcode);

@@ -10,14 +10,14 @@ import lombok.Data;
 public class KgDeviceInfoBo {
     private final long id;
 
-    private final short zdFcode;
+    private final Short zdFcode;
     private final String kgType;
-    private final short phaseCnt;
-    private final float ue;
-    private final float umax;
-    private final float ie;
-    private final float imax;
-    private final int datapoint;
+    private final Short phaseCnt;
+    private final Float ue;
+    private final Float umax;
+    private final Float ie;
+    private final Float imax;
+    private final Integer datapoint;
 
     public void updateEntity(KgDeviceInfo deviceInfo) {
         deviceInfo.setZdFcode(zdFcode);

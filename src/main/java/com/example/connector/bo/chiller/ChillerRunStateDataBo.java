@@ -12,7 +12,7 @@ import lombok.Data;
 public class ChillerRunStateDataBo {
     private final long deviceId;
 
-    private final long time;
+    private final Long time;
     private final short ktState;
     private final String ktMsg;
     private final short zdState;
@@ -21,8 +21,8 @@ public class ChillerRunStateDataBo {
     private final short refStatus;
     private final short evaState;
     private final short conState;
-    private final int comStartsCnt;
-    private final long runTime;
+    private final Integer comStartsCnt;
+    private final Long runTime;
 
     public ChillerRunStateData getEntity() {
         LocalDateTime dateTime =

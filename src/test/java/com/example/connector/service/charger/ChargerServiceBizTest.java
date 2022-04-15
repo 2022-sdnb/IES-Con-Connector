@@ -42,8 +42,8 @@ class ChargerServiceBizTest {
     void addRunElectricityData() {
         long deviceId = 2;
         long time = 10, startTime = 10;
-        float pwatt1 = 1.0f, pwatt2 = 2.0f, pwatt3 = 3.0f, pwatt4 = 4.0f;
-        float income1 = 1.0f, income2 = 2.0f, income3 = 3.0f, income4 = 4.0f;
+        Float pwatt1 = 1.0f, pwatt2 = 2.0f, pwatt3 = 3.0f, pwatt4 = 4.0f;
+        Float income1 = 1.0f, income2 = 2.0f, income3 = 3.0f, income4 = 4.0f;
         ChargerRunElectricityDataBo add =
                 new ChargerRunElectricityDataBo(
                         deviceId, time, startTime, pwatt1, pwatt2, pwatt3, pwatt4, income1, income2,
@@ -67,7 +67,7 @@ class ChargerServiceBizTest {
     @Test
     void addRunOtherData() {
         long deviceId = 2, time = 10;
-        float factor = 1.0f,
+        Float factor = 1.0f,
                 ua = 2.0f,
                 ub = 3.0f,
                 uc = 4.0f,
@@ -108,7 +108,7 @@ class ChargerServiceBizTest {
     @Test
     void addRunPowerData() {
         long deviceId = 0, time = 3;
-        float pinRt = 2.3f, qinRt = 2.4f;
+        Float pinRt = 2.3f, qinRt = 2.4f;
         ChargerRunPowerDataBo add = new ChargerRunPowerDataBo(deviceId, time, pinRt, qinRt);
 
         int previousSize = powerDataSize;
@@ -160,8 +160,8 @@ class ChargerServiceBizTest {
         short zdFcode = 1, cdFcode = 1;
         String cdPid = "test";
         short outCnt = 5, phaseCnt = 5;
-        float inUe = 3.0f, inIe = 3.0f, inPower = 6.0f;
-        float outUe = 2.5f, outIe = 2.5f, outPower = 5.0f;
+        Float inUe = 3.0f, inIe = 3.0f, inPower = 6.0f;
+        Float outUe = 2.5f, outIe = 2.5f, outPower = 5.0f;
         int datapoint = 1;
         ChargerDeviceInfoBo update =
                 new ChargerDeviceInfoBo(

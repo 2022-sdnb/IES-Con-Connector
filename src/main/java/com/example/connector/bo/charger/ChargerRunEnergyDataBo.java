@@ -12,9 +12,9 @@ import lombok.Data;
 public class ChargerRunEnergyDataBo {
     private final long deviceId;
 
-    private final long time;
-    private final float pwattIn;
-    private final float qwattIn;
+    private final Long time;
+    private final Float pwattIn;
+    private final Float qwattIn;
 
     public ChargerRunEnergyData getEntity() {
         LocalDateTime dateTime =

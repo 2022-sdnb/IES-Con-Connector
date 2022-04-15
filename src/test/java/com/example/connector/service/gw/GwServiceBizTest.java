@@ -27,7 +27,7 @@ class GwServiceBizTest {
         long id = 1;
         short gwFcode = 1;
         int genCnt = 0, loadCnt = 0, storageCnt = 0, chargerCnt = 0, datapoint = 0;
-        float genKw = 0.0f, loadKw = 0.0f, storageKw = 0.0f, chargerKw = 0.0f;
+        Float genKw = 0.0f, loadKw = 0.0f, storageKw = 0.0f, chargerKw = 0.0f;
         GwDeviceInfoBo upd =
                 new GwDeviceInfoBo(
                         id,

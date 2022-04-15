@@ -12,7 +12,7 @@ import lombok.Data;
 public class ChargerRunStateDataBo {
     private final long deviceId;
 
-    private final long time;
+    private final Long time;
     private final short cdState;
     private final String cdMsg;
     private final short zdState;

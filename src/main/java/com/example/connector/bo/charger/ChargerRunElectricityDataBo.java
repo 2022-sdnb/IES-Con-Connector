@@ -12,16 +12,16 @@ import lombok.Data;
 public class ChargerRunElectricityDataBo {
     private final long deviceId;
 
-    private final long time;
-    private final long startTime;
-    private final float pwatt1;
-    private final float pwatt2;
-    private final float pwatt3;
-    private final float pwatt4;
-    private final float income1;
-    private final float income2;
-    private final float income3;
-    private final float income4;
+    private final Long time;
+    private final Long startTime;
+    private final Float pwatt1;
+    private final Float pwatt2;
+    private final Float pwatt3;
+    private final Float pwatt4;
+    private final Float income1;
+    private final Float income2;
+    private final Float income3;
+    private final Float income4;
 
     public ChargerRunElectricityData getEntity() {
         LocalDateTime dateTime =

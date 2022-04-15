@@ -46,7 +46,7 @@ class KgServiceBizTest {
         long id = 100;
         short zdFcode = 1, phaseCnt = 1;
         String kgType = "test";
-        float ue = 2.5f, umax = 3.0f, ie = 2.5f, imax = 3.0f;
+        Float ue = 2.5f, umax = 3.0f, ie = 2.5f, imax = 3.0f;
         int datapoint = 1;
         KgDeviceInfoBo update =
                 new KgDeviceInfoBo(id, zdFcode, kgType, phaseCnt, ue, umax, ie, imax, datapoint);
@@ -83,7 +83,7 @@ class KgServiceBizTest {
     @Test
     void addRunElectricityData() {
         long deviceId = 1, time = 2;
-        float pwatt = 3.0f, qwatt = 4.0f;
+        Float pwatt = 3.0f, qwatt = 4.0f;
         KgRunElectricityDataBo add = new KgRunElectricityDataBo(deviceId, time, pwatt, qwatt);
 
         int previousSize = runElectricityDataSize;
@@ -104,7 +104,7 @@ class KgServiceBizTest {
     @Test
     void addRunOtherData() {
         long deviceId = 2, time = 10;
-        float freRt = 0.0f,
+        Float freRt = 0.0f,
                 factor = 1.0f,
                 uaThd = 0.0f,
                 ubThd = 0.0f,
@@ -146,7 +146,7 @@ class KgServiceBizTest {
     @Test
     void addRunPowerData() {
         long deviceId = 0, time = 3;
-        float pinRt = 2.3f, qinRt = 2.4f;
+        Float pinRt = 2.3f, qinRt = 2.4f;
         KgRunPowerDataBo add = new KgRunPowerDataBo(deviceId, time, pinRt, qinRt);
 
         int previousSize = powerDataSize;

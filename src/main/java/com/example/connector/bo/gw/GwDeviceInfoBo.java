@@ -11,15 +11,15 @@ public class GwDeviceInfoBo {
     private final long id;
 
     private final short gwFcode;
-    private final int genCnt;
-    private final float genKw;
-    private final int loadCnt;
-    private final float loadKw;
-    private final int storageCnt;
-    private final float storageKw;
-    private final int chargerCnt;
-    private final float chargerKw;
-    private final int datapoint;
+    private final Integer genCnt;
+    private final Float genKw;
+    private final Integer loadCnt;
+    private final Float loadKw;
+    private final Integer storageCnt;
+    private final Float storageKw;
+    private final Integer chargerCnt;
+    private final Float chargerKw;
+    private final Integer datapoint;
 
     public void updateEntity(GwDeviceInfo deviceInfo) {
         deviceInfo.setGwFcode(gwFcode);

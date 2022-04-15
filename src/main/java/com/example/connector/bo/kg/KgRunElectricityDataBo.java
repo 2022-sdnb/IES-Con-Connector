@@ -12,9 +12,9 @@ import lombok.Data;
 public class KgRunElectricityDataBo {
     private final long deviceId;
 
-    private final long time;
-    private final float pwatt;
-    private final float qwatt;
+    private final Long time;
+    private final Float pwatt;
+    private final Float qwatt;
 
     public KgRunElectricityData getEntity() {
         LocalDateTime dateTime =

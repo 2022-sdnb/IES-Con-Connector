@@ -12,25 +12,25 @@ import lombok.Data;
 public class ChargerRunOtherDataBo {
     private final long deviceId;
 
-    private final long time;
-    private final float factor;
-    private final float ua;
-    private final float ub;
-    private final float uc;
-    private final float uo;
-    private final float ia;
-    private final float ib;
-    private final float ic;
-    private final float io;
-    private final float uab;
-    private final float ubc;
-    private final float uca;
-    private final float uaThd;
-    private final float ubThd;
-    private final float ucThd;
-    private final float iaThd;
-    private final float ibThd;
-    private final float icThd;
+    private final Long time;
+    private final Float factor;
+    private final Float ua;
+    private final Float ub;
+    private final Float uc;
+    private final Float uo;
+    private final Float ia;
+    private final Float ib;
+    private final Float ic;
+    private final Float io;
+    private final Float uab;
+    private final Float ubc;
+    private final Float uca;
+    private final Float uaThd;
+    private final Float ubThd;
+    private final Float ucThd;
+    private final Float iaThd;
+    private final Float ibThd;
+    private final Float icThd;
 
     public ChargerRunOtherData getEntity() {
         LocalDateTime dateTime =

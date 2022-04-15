@@ -45,7 +45,7 @@ class ChillerServiceBizTest {
         long id = 5;
         short ktFcode = 0, phaseCnt = 0;
         String ktPid = "test";
-        float capCool = 0.0f,
+        Float capCool = 0.0f,
                 capHeat = 0.0f,
                 iStart = 0.0f,
                 iMax = 100.0f,
@@ -89,7 +89,7 @@ class ChillerServiceBizTest {
     @Test
     void addRunData() {
         long deviceId = 23, time = 2;
-        float pwatt = 0.0f,
+        Float pwatt = 0.0f,
                 qwatt = 0.0f,
                 chInTemp = 8.0f,
                 chOutTemp = 24.0f,
@@ -132,7 +132,7 @@ class ChillerServiceBizTest {
     @Test
     void addRunPowerData() {
         long deviceId = 35, time = 13;
-        float pRt = 0.0f, qRt = 1.2f;
+        Float pRt = 0.0f, qRt = 1.2f;
         ChillerRunPowerDataBo add = new ChillerRunPowerDataBo(deviceId, time, pRt, qRt);
 
         int previousSize = runPowerDataSize;
@@ -154,7 +154,7 @@ class ChillerServiceBizTest {
     void addRunScheduleData() {
         long deviceId = 34, time = 22;
         short onOffSet = 21;
-        float temSet = 1.1f, pLimitSet = 1.7f;
+        Float temSet = 1.1f, pLimitSet = 1.7f;
         ChillerRunScheduleDataBo add =
                 new ChillerRunScheduleDataBo(deviceId, time, onOffSet, temSet, pLimitSet);
 

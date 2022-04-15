@@ -12,15 +12,15 @@ public class ChillerDeviceInfoBo {
 
     private final short ktFcode;
     private final String ktPid;
-    private final float capCool;
-    private final float capHeat;
-    private final float iStart;
-    private final float iMax;
-    private final float iMin;
-    private final float iBreak;
-    private final float uIn;
+    private final Float capCool;
+    private final Float capHeat;
+    private final Float iStart;
+    private final Float iMax;
+    private final Float iMin;
+    private final Float iBreak;
+    private final Float uIn;
     private final short phaseCnt;
-    private final int dataPoint;
+    private final Integer dataPoint;
 
     public void updateEntity(ChillerDeviceInfo deviceInfo) {
         deviceInfo.setKtFcode(ktFcode);
